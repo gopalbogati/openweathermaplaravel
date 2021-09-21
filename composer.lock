@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6cadd819a6415b190ae2704ced6e6c8b",
+    "content-hash": "f1a091a8e4618555b156eef16c5a6431",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -121,6 +121,53 @@
                 }
             ],
             "time": "2021-08-15T20:50:18+00:00"
+        },
+        {
+            "name": "dnsimmons/openweather",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dnsimmons/openweather.git",
+                "reference": "d67ac3629feca69fa8a1b1d970c192d7ec37a9ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dnsimmons/openweather/zipball/d67ac3629feca69fa8a1b1d970c192d7ec37a9ec",
+                "reference": "d67ac3629feca69fa8a1b1d970c192d7ec37a9ec",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dnsimmons\\OpenWeather\\OpenWeatherServiceProvider"
+                    ],
+                    "aliases": {
+                        "OpenWeather": "Dnsimmons\\OpenWeather\\OpenWeather"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dnsimmons\\OpenWeather\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Simmons",
+                    "email": "hello@dsimmons.me"
+                }
+            ],
+            "description": "OpenWeather is a Laravel package simplifying working with the free Open Weather Map APIs.",
+            "support": {
+                "issues": "https://github.com/dnsimmons/openweather/issues",
+                "source": "https://github.com/dnsimmons/openweather/tree/1.0.6"
+            },
+            "time": "2021-08-10T23:13:20+00:00"
         },
         {
             "name": "doctrine/inflector",
