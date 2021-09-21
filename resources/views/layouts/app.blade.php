@@ -36,51 +36,19 @@ $(document).ready(function() {
            data : {city: city, unit: unit},
            success: function(data)
                   {
-
-                     console.log(data);
                      $('#data-table').dataTable().fnClearTable();
                      $('#data-table').dataTable().fnAddData(data);
 
 
-               }
+               },
+            error: function(message,xhr,status){
+                alert(message.responseText);
+
+
+            }
         });
 
    });
 });
 
  </script>
-
-@section('content')
-<div class="container">
-    <form id="inputform">
-        <h5><label for="city">Type City Names Separated By Commas</label></h5>
-        <div class="form-group">
-        <input type="text" id="city" name="city"> <br>
-         </div>
-       <div class="radio">
-       <input type="radio"  value="metric" name="unit" checked="true">
-        <label>Metric(Celsius) </label><br>
-        </div>
-         <div class="radio">
-        <input type="radio" value="kelvin" name="unit">
-        <label>Kelvin(Fahrenheit) </label><br>
-        </div>
-        <input type="button" value="Load" id="load">
-    </form>
-
-    <h3> <br> Data in Table</h3>
-    <table id="data-table">
-        <thead>
-
-            <tr>
-                <th>Country</th>
-                <th>Name</th>
-                <th>Temperature</th>
-                <th>Temperature Min</th>
-                <th>Temperature Max</th>
-            </tr>
-        </thead>
-    </table>
-    </div>
-
-@endsection

@@ -13,11 +13,16 @@ class WeatherController extends Controller
     }
     public function WeatherApi(request $request){
              $weather = new OpenWeather();
+
              $cities = $request->get('city');
              $result = [];
              foreach(explode(',',$cities) as $city){
+
                  $report = $weather->getCurrentWeatherByCityName($city, $request->get('unit'));
-               // $row= array("city"=>"city", "temp"=>"12");
+                 if ($report==false){
+                     $errorResponse= ('Unable to fetch weather report for location '.$city);
+                     return response()->json($errorResponse,400);
+                  }
                  $row= array("country"=>$report["location"]["country"],
                    "name"=>$report["location"]["name"],
                    "temperature"=>$report["forecast"]["temp"],
