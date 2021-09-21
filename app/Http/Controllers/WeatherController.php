@@ -8,10 +8,9 @@ use Illuminate\Http\Request;
 class WeatherController extends Controller
 {
     public function index(request $request){
-        dd("test");
         $weather = new OpenWeather();
         $current = $weather->getCurrentWeatherByPostal('02111');
-        print_r($current);
+        return view('welcome');
     }
 
 }
