@@ -10,7 +10,11 @@ class WeatherController extends Controller
     public function index(request $request){
         $weather = new OpenWeather();
         $current = $weather->getCurrentWeatherByPostal('02111');
-        return view('welcome');
+        echo '<pre>';
+        print_r($current);
+        echo '</pre>';
+        //return view('home', compact('current'));
+        // return view('home');
     }
 
 }
