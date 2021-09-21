@@ -9,9 +9,25 @@
   <option value="opel">Opel</option>
   <option value="audi">Audi</option>
 </select> --}}
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css"></script>
+<script src="//cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function() {
+
+    $('#data-table').DataTable({
+                        // data: data,
+                         columns: [
+                             {data: 'country'},
+                             {data: 'name'},
+                             {data: 'temperature'},
+                             {data: 'temperature_min'},
+                             {data: 'temperature_min'}
+                            ]
+                     });
+
     $('#load').on('click',function(e){
    e.preventDefault();
 
@@ -26,6 +42,9 @@ $(document).ready(function() {
                   {
 
                      console.log(data);
+                     $('#data-table').dataTable().fnClearTable();
+                     $('#data-table').dataTable().fnAddData(data);
+
 
                }
         });
@@ -52,12 +71,31 @@ $(document).ready(function() {
 //     }
 
     </script>
-<input type="text" id="city" name="city"><br>
-<label for="css">Degree Celsius</label> <br>
-<input type="radio" id="unit" value="c" name="unit" checked="true"><br>
-<label for="css">Degree Fahrenheit</label> <br>
-<input type="radio" id="unit" value="f" name="unit">
-<input type="button" value="save" id="load">
+<input type="text" id="city" name="city"> <br>
+
+<input type="radio"  value="imperial" name="unit">
+<label>Imperial</label><br>
+
+<input type="radio"  value="metric" name="unit" checked="true">
+<label>Metric </label><br>
+
+<input type="radio" value="kelvin" name="unit">
+<label>Kelvin</label><br>
+
+<input type="button" value="Load" id="load">
+
+
+<table id="data-table">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Name</th>
+            <th>Temperature</th>
+            <th>Temperature Min</th>
+            <th>Temperature Max</th>
+        </tr>
+    </thead>
+</table>
 
 
 @section('content')

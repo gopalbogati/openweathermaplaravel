@@ -12,13 +12,18 @@ class WeatherController extends Controller
          return view('home');
     }
     public function WeatherApi(request $request){
-        $weather = new OpenWeather();
-
+             $weather = new OpenWeather();
              $cities = $request->get('city');
              $result = [];
              foreach(explode(',',$cities) as $city){
                $report = $weather->getCurrentWeatherByCityName($city, $request->get('unit'));
-                array_push($result, $report);
+               // $row= array("city"=>"city", "temp"=>"12");
+               $row= array("country"=>$report["location"]["country"],
+               "name"=>$report["location"]["name"],
+               "temperature"=>$report["forecast"]["temp"],
+               "temperature_min"=>$report["forecast"]["temp_min"],
+               "temperature_max"=>$report["forecast"]["temp_max"]);
+               array_push($result, $row);
 
              }
 
