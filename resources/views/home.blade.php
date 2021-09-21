@@ -55,26 +55,27 @@ $(document).ready(function() {
 
  </script>
  <div class="container">
-<h5><label for="city">Type City Names Separated By Commas</label></h5>
- <div class="form-group">
-<input type="text" id="city" name="city"> <br>
-</div>
+<form id="inputform">
+    <h5><label for="city">Type City Names Separated By Commas</label></h5>
+    <div class="form-group">
+    <input type="text" id="city" name="city"> <br>
+     </div>
 
 {{-- <div class="radio">
 <input type="radio"  value="imperial" name="unit" hidden>
 <label>Imperial(Default)</label><br>
 <div class="radio"> --}}
 
-<div class="radio">
-<input type="radio"  value="metric" name="unit" checked="true">
-<label>Metric(Celsius) </label><br>
-</div>
-
-<div class="radio">
-<input type="radio" value="kelvin" name="unit">
-<label>Kelvin(Fahrenheit) </label><br>
-</div>
-<input type="button" value="Load" id="load">
+   <div class="radio">
+   <input type="radio"  value="metric" name="unit" checked="true">
+    <label>Metric(Celsius) </label><br>
+    </div>
+     <div class="radio">
+    <input type="radio" value="kelvin" name="unit">
+    <label>Kelvin(Fahrenheit) </label><br>
+    </div>
+    <input type="button" value="Load" id="load">
+</form>
 
 <h3> <br> Data in Table</h3>
 <table id="data-table">
