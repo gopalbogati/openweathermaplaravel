@@ -1,22 +1,22 @@
 @extends('layouts.app')
-<label for="city">Choose city</label>
 
 
 
-{{-- <select name="city" id="city" multiple>
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option>
-</select> --}}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css"></script>
-<script src="//cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+
 
 <script type="text/javascript">
 $(document).ready(function() {
-
+//SEND DATA TO VIEW
     $('#data-table').DataTable({
                         // data: data,
                          columns: [
@@ -53,40 +53,33 @@ $(document).ready(function() {
 });
 
 
-// function loadData(e) {
-//     e.preventDefault();
-//         var city = document.getElementById("city");
-//         var unit = document.getElementById("unit").value;
-//         $.ajax({
-//            url : '/weather',
-//            data : {city: city, unit: unit},
-//         //    success: function(data)
-//         //           {
-//         //               console.log("saveßßS")
-//         //             //   console.log(data);
-
-//         //        }
-//         });
-//         alert('hello')
-//     }
-
-    </script>
+ </script>
+ <div class="container">
+<h5><label for="city">Type City Names Separated By Commas</label></h5>
+ <div class="form-group">
 <input type="text" id="city" name="city"> <br>
+</div>
 
-<input type="radio"  value="imperial" name="unit">
-<label>Imperial</label><br>
+{{-- <div class="radio">
+<input type="radio"  value="imperial" name="unit" hidden>
+<label>Imperial(Default)</label><br>
+<div class="radio"> --}}
 
+<div class="radio">
 <input type="radio"  value="metric" name="unit" checked="true">
-<label>Metric </label><br>
+<label>Metric(Celsius) </label><br>
+</div>
 
+<div class="radio">
 <input type="radio" value="kelvin" name="unit">
-<label>Kelvin</label><br>
-
+<label>Kelvin(Fahrenheit) </label><br>
+</div>
 <input type="button" value="Load" id="load">
 
-
+<h3> <br> Data in Table</h3>
 <table id="data-table">
     <thead>
+
         <tr>
             <th>Country</th>
             <th>Name</th>
@@ -96,30 +89,8 @@ $(document).ready(function() {
         </tr>
     </thead>
 </table>
-
+</div>
 
 @section('content')
 
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-            @foreach ($current as $key => $value))
-                    <p>This is user {{$key }}</p>
-            @endforeach
-
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection
