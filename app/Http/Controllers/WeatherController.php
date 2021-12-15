@@ -7,13 +7,12 @@ use Illuminate\Http\Request;
 
 class WeatherController extends Controller
 {
-    public function index(request $request){
+    public function index(){
 
          return view('home');
     }
     public function WeatherApi(request $request){
              $weather = new OpenWeather();
-
              $cities = $request->get('city');
              $result = [];
              foreach(explode(',',$cities) as $city){

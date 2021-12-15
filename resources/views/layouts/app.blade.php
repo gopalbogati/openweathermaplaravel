@@ -27,7 +27,7 @@ $(document).ready(function() {
     $('#load').on('click',function(e){
    e.preventDefault();
 
-       var city = $("#city").val();
+        var city = $("#city").val();
         var unit = $(":radio:checked").val();
         $.ajax({
            url : '/weather',
@@ -41,6 +41,7 @@ $(document).ready(function() {
 
 
                },
+               //Validation
             error: function(message,xhr,status){
                 alert(message.responseText);
 
