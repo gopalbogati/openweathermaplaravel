@@ -1,7 +1,7 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/7541457/146671120-d40b0742-072d-4581-9076-352c1af66fae.png" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/7541457/146671120-d40b0742-072d-4581-9076-352c1af66fae.png" width="600"></a></p>
 
 
-## About openweathermaplaravel
+## About OpenWeatherMap laravel Application
 
 Openweathermaplaravel is a laravel Api web application developed to find and filter the worldwide countries and cities temperature in kelvin and celsius format developed with the use of openweathermap API.
 
