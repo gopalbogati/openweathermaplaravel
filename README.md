@@ -6,7 +6,7 @@
 Openweathermaplaravel is a laravel Api web application developed to find and filter the worldwide countries and cities temperature in kelvin and celsius format developed with the use of openweathermap API.
 
 ##  Clone the project repository first using </br>
--  git clone Repo URL </br>
+-  git clone https://github.com/gopalbogati/openweathermaplaravel.git  </br>
 After clone add the below code .env file </br>
 OPENWEATHER_API_KEY="Your API KEY from openweathermap" </br>
 OPENWEATHER_API_LANG="en" </br>
