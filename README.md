@@ -1,28 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/7541457/146671120-d40b0742-072d-4581-9076-352c1af66fae.png" width="600"></a></p>
+# 🌤️ OpenWeatherMap Laravel App
 
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat&logo=laravel&logoColor=white)
+![API](https://img.shields.io/badge/OpenWeatherMap-API-orange?style=flat)
 
-## About OpenWeatherMap laravel Application
+A Laravel web application that fetches and displays real-time weather data for any city worldwide using the **OpenWeatherMap API**. Shows temperature in both Kelvin and Celsius with date/time formatting.
 
-Openweathermaplaravel is a laravel Api web application developed to find and filter the worldwide countries and cities temperature in kelvin and celsius format developed with the use of openweathermap API.
+---
 
-##  Clone the project repository first using </br>
--  git clone https://github.com/gopalbogati/openweathermaplaravel.git  </br>
-After clone add the below code .env file </br>
-OPENWEATHER_API_KEY="Your API KEY from openweathermap" </br>
-OPENWEATHER_API_LANG="en" </br>
-OPENWEATHER_API_DATE_FORMAT="m/d/Y" </br>
-OPENWEATHER_API_TIME_FORMAT="h:i A" </br>
-OPENWEATHER_API_DAY_FORMAT="l" </br>
+## ✨ Features
 
+- 🌍 Search weather for any city or country worldwide
+- 🌡️ Temperature display in Celsius and Kelvin
+- 📅 Formatted date and time output
+- 🔁 Live API integration with OpenWeatherMap
+- 📊 Data table with sortable results (jQuery DataTables)
+- ✅ Unit tested with PHPUnit
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🛠️ Tech Stack
 
-## Security Vulnerabilities
+| Technology | Purpose |
+|---|---|
+| PHP 7+ | Server-side language |
+| Laravel 5.x | MVC Framework |
+| OpenWeatherMap API | Live weather data |
+| Bootstrap 4 | UI Styling |
+| jQuery DataTables | Data display |
+| PHPUnit | Testing |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🚀 Getting Started
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Prerequisites
+- PHP >= 7.1
+- Composer
+- Free API key from [openweathermap.org](https://openweathermap.org/api)
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/gopalbogati/openweathermaplaravel.git
+cd openweathermaplaravel
+
+# Install dependencies
+composer install
+
+# Copy environment file
+cp .env.example .env
+
+# Generate app key
+php artisan key:generate
+```
+
+### Configure `.env`
+```env
+OPENWEATHER_API_KEY=your_api_key_here
+OPENWEATHER_API_LANG=en
+OPENWEATHER_API_DATE_FORMAT=m/d/Y
+OPENWEATHER_API_TIME_FORMAT=h:i A
+OPENWEATHER_API_DAY_FORMAT=l
+```
+
+### Run
+```bash
+php artisan serve
+```
+Visit `http://localhost:8000`
+
+---
+
+## 📁 Project Structure
+
+```
+openweathermaplaravel/
+├── app/          # Controllers, Models
+├── config/       # App configuration
+├── database/     # Migrations & seeders
+├── public/       # Entry point & assets
+├── resources/    # Blade views
+├── routes/       # Web & API routes
+└── tests/        # PHPUnit tests
+```
+
+---
+
+## 👤 Author
+
+**Gopal Bogati**
+- GitHub: [@gopalbogati](https://github.com/gopalbogati)
+- LinkedIn: [Gopal Bogati](https://au.linkedin.com/in/gopal-bogati-4164b7b8)
+- Location: Sydney, Australia
